@@ -21,7 +21,7 @@ $(NAME): $(LIBFT) $(OBJ)
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-%.o: %.c
+%.o: %.c libftprintf.h
 	$(CC) $(CFLAGS) -I $(LIBFT_DIR) -c $< -o $@
 
 clean:
