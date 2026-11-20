@@ -56,7 +56,10 @@ int	ft_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			count += handle_format(*++format, ap);
+			format++;
+			if (!*format)
+				break ;
+			count += handle_format(*format, ap);
 			format++;
 			continue ;
 		}
