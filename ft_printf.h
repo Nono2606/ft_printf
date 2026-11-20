@@ -18,9 +18,8 @@
 
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
-int	ft_putnbr(int n, int base, int uppercase);
+int	ft_putnbr(long n, int base, int uppercase);
 int	ft_putnbrp(unsigned long v);
-int	ft_putnbru(unsigned int n);
 int	ft_putstr(char *s);
 
 #endif
