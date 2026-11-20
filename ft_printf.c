@@ -63,8 +63,7 @@ int	ft_printf(const char *format, ...)
 			format++;
 			continue ;
 		}
-		count++;
-		ft_putchar(*format++);
+		count += ft_putchar(*format++);
 	}
 	va_end(ap);
 	return (count);
