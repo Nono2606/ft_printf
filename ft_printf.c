@@ -33,9 +33,9 @@ static int	handle_format(char c, va_list value)
 	else if (c == 's')
 		return (ft_putstr(va_arg(value, char *)));
 	else if (c == 'x')
-		return (ft_putnbr(va_arg(value, int), 16, 0));
+		return (ft_putnbr(va_arg(value,unsigned int), 16, 0));
 	else if (c == 'X')
-		return (ft_putnbr(va_arg(value, int), 16, 1));
+		return (ft_putnbr(va_arg(value,unsigned int), 16, 1));
 	else if (c == 'u')
 		return (ft_putnbru(va_arg(value, unsigned int)));
 	else if (c == '%')
