@@ -24,24 +24,24 @@
 %% Prints a percent sign.
 */
 
-static int	handle_format(char c, va_list value)
+static int	handle_format(char c, va_list *value)
 {
 	if (c == 'c')
-		return (ft_putchar(va_arg(value, int)));
+		return (ft_putchar(va_arg(*value, int)));
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr((va_arg(value, int)), 10, 0));
+		return (ft_putnbr((va_arg(*value, int)), 10, 0));
 	else if (c == 's')
-		return (ft_putstr(va_arg(value, char *)));
+		return (ft_putstr(va_arg(*value, char *)));
 	else if (c == 'x')
-		return (ft_putnbr(va_arg(value,unsigned int), 16, 0));
+		return (ft_putnbr(va_arg(*value,unsigned int), 16, 0));
 	else if (c == 'X')
-		return (ft_putnbr(va_arg(value,unsigned int), 16, 1));
+		return (ft_putnbr(va_arg(*value,unsigned int), 16, 1));
 	else if (c == 'u')
-		return (ft_putnbru(va_arg(value, unsigned int)));
+		return (ft_putnbr(va_arg(*value, unsigned int), 10, 0));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	else if (c == 'p')
-		return (ft_putnbrp(va_arg(value, unsigned long)));
+		return (ft_putnbrp(va_arg(*value, unsigned long)));
 	return (0);
 }
 
@@ -59,7 +59,7 @@ int	ft_printf(const char *format, ...)
 			format++;
 			if (!*format)
 				break ;
-			count += handle_format(*format, ap);
+			count += handle_format(*format, &ap);
 			format++;
 			continue ;
 		}
