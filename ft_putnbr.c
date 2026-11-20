@@ -27,7 +27,7 @@ int	ft_putnbr(long n, int base, int uppercase)
 	if (nb < 0)
 	{
 		count += ft_putchar('-');
-		nb = -n;
+		nb = -nb;
 	}
 	if (nb >= base)
 		count += ft_putnbr((nb / base), base, uppercase);
