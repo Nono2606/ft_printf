@@ -3,7 +3,6 @@ SRC = ft_printf.c \
 	ft_putchar.c \
 	ft_putnbr.c \
 	ft_putnbrp.c \
-	ft_putnbru.c \
 	ft_putstr.c
 
 OBJ = $(SRC:.c=.o)
