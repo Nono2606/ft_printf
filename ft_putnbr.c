@@ -24,8 +24,8 @@ int	ft_putnbr(int n, int base, int uppercase)
 		basec = "0123456789abcdef";
 	if (n < 0)
 	{
-		ft_putchar('-');
-		n *= -1;
+		count += ft_putchar('-');
+		n = -n;
 	}
 	if (n >= base)
 		count += ft_putnbr((n / base), base, uppercase);
