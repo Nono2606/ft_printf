@@ -16,19 +16,21 @@ int	ft_putnbr(long n, int base, int uppercase)
 {
 	char	*basec;
 	int		count;
+	long	nb;
 
 	count = 0;
+	nb = n;
 	if (uppercase)
 		basec = "0123456789ABCDEF";
 	else
 		basec = "0123456789abcdef";
-	if (n < 0)
+	if (nb < 0)
 	{
 		count += ft_putchar('-');
-		n = -n;
+		nb = -n;
 	}
-	if (n >= base)
-		count += ft_putnbr((n / base), base, uppercase);
-	count += ft_putchar(basec[n % base]);
+	if (nb >= base)
+		count += ft_putnbr((nb / base), base, uppercase);
+	count += ft_putchar(basec[nb % base]);
 	return (count);
 }
