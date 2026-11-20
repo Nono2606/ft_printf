@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-int	ft_putnbr(int n, int base, int uppercase)
+int	ft_putnbr(long n, int base, int uppercase)
 {
 	char	*basec;
 	int		count;
